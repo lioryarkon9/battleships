@@ -1,7 +1,7 @@
 import { BattleshipsProvider } from "../contexts/useBattleships";
 
-import { Legend } from "./Legend/Legend";
 import { BattleZone } from "./BattleZone/BattleZone";
+import { Legend } from "./Legend/Legend";
 
 import styles from "./App.module.css";
 
