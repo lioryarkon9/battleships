@@ -1,7 +1,7 @@
 import { BattleshipsProvider } from "../contexts/useBattleships";
-import { BattleZone } from "./BattleZone/BattleZone";
 
 import { Actions } from "./Actions/Actions";
+import { BattleZone } from "./BattleZone/BattleZone";
 
 import styles from "./App.module.css";
 

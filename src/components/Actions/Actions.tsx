@@ -2,6 +2,7 @@ import React from "react";
 
 import { getIsGameOver } from "../../utils/common.utils";
 import { useBattleships } from "../../contexts/useBattleships";
+
 import { Button } from "../Button/Button";
 
 export function Actions(): React.JSX.Element {

@@ -2,8 +2,8 @@ import React from "react";
 
 import { TCoordinate } from "../../types/common.types";
 
-import { useBattleships } from "../../contexts/useBattleships";
 import { ICON_BY_SHIP_TYPE } from "../../constants/icons.constants";
+import { useBattleships } from "../../contexts/useBattleships";
 
 import hitSmallIcon from "../../assets/Hit small.png";
 import missSmallIcon from "../../assets/Miss small.png";
