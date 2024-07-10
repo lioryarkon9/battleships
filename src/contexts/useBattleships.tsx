@@ -1,8 +1,7 @@
 import React from "react";
 
-import { TContextValue } from "../types/common.types";
+import { TContextValue, TOnCellClickProps } from "../types/common.types";
 
-import { getNextStep } from "../utils/common.utils";
 import { INITIAL_STATE, reducer } from "./battleships.reducer";
 
 const BattleshipsContext = React.createContext<TContextValue>({
@@ -16,26 +15,27 @@ type TProps = {
 
 export function BattleshipsProvider({ children }: TProps) {
   const [state, dispatch] = React.useReducer(reducer, INITIAL_STATE);
-  const { battleZone, firedUponCoordinates, damagedCoordinates } = state;
+  const { shipsLayout } = state;
 
-  const fire = () => {
-    const { damagedShip, coordinates } = getNextStep({
-      battleZone,
-      firedUponCoordinates,
-      damagedCoordinates,
-    });
-
-    if (damagedShip) {
-      dispatch({ type: "SET_DAMAGED_SHIPS", payload: { damagedShip } });
+  const onCellClick = ({ coordinates, battleshipId }: TOnCellClickProps) => {
+    if (battleshipId) {
+      dispatch({
+        type: "SET_DAMAGED_SHIP",
+        payload: {
+          battleshipId,
+          coordinates,
+          hits: shipsLayout[battleshipId].hits + 1,
+        },
+      });
     } else {
-      dispatch({ type: "SET_FIRED_SHIPS", payload: { coordinates } });
+      dispatch({ type: "SET_FIRED_UPON_CELL", payload: { coordinates } });
     }
   };
 
   const value = {
     state,
     actions: {
-      fire,
+      onCellClick,
     },
   };
 

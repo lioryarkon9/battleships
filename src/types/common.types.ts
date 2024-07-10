@@ -34,3 +34,8 @@ export type TContextValue = {
   state: TBattleshipsState;
   actions: Record<string, any>;
 };
+
+export type TOnCellClickProps = {
+  coordinates: TCoordinate;
+  battleshipId: TGridShip["battleshipId"];
+};

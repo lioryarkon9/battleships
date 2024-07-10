@@ -16,7 +16,7 @@ type TProps = {
 };
 
 export function Cell({ battleshipId, coordinates }: TProps): React.JSX.Element {
-  const { state } = useBattleships();
+  const { state, actions } = useBattleships();
   const { shipsLayout, damagedCoordinates, firedUponCoordinates } = state;
 
   const isFiredUpon = firedUponCoordinates.includes(
@@ -24,9 +24,6 @@ export function Cell({ battleshipId, coordinates }: TProps): React.JSX.Element {
   );
   const isDamaged = damagedCoordinates.includes(JSON.stringify(coordinates));
   const isCellStatusIcon = isDamaged || isFiredUpon;
-
-  const firedUponClass = isFiredUpon ? styles.firedUpon : "";
-  const damagedClass = isDamaged ? styles.damaged : "";
 
   let shipStatus;
   let destroyedClass = "";
@@ -45,10 +42,11 @@ export function Cell({ battleshipId, coordinates }: TProps): React.JSX.Element {
 
   return (
     <div
-      className={`${styles.gridCell} ${firedUponClass} ${damagedClass} ${destroyedClass}`}
+      onClick={() => actions.onCellClick({ coordinates, battleshipId })}
+      className={`${styles.gridCell} ${destroyedClass}`}
     >
       <div className={styles.section}>
-        {shipStatus ? (
+        {shipStatus && isDamaged ? (
           <img
             alt="ship_icon"
             className={styles.shipIcon}

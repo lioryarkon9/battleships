@@ -16,14 +16,14 @@ export function reducer(
   action: TAction,
 ): TBattleshipsState {
   switch (action.type) {
-    case "SET_DAMAGED_SHIPS": {
-      const { damagedShip } = action.payload!;
+    case "SET_DAMAGED_SHIP": {
+      const { battleshipId, coordinates, hits } = action.payload!;
 
       let updatedShipsLayout = { ...state.shipsLayout };
       let updatedDamagedCoordinates = [...state.damagedCoordinates];
 
-      updatedShipsLayout[damagedShip.id].hits++;
-      updatedDamagedCoordinates.push(JSON.stringify(damagedShip.coordinates));
+      updatedShipsLayout[battleshipId].hits = hits;
+      updatedDamagedCoordinates.push(JSON.stringify(coordinates));
 
       return {
         ...state,
@@ -31,7 +31,7 @@ export function reducer(
         damagedCoordinates: updatedDamagedCoordinates,
       };
     }
-    case "SET_FIRED_SHIPS": {
+    case "SET_FIRED_UPON_CELL": {
       const { coordinates } = action.payload!;
 
       return {

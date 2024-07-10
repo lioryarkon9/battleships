@@ -47,9 +47,8 @@ export const BATTLE_SHIPS_LAYOUT: Record<string, TBattleship> = {
   "90a5a7da-62b3-4976-ad5f-dc930e9bbbbe": {
     type: EShipType.destroyer,
     positions: [
-      [3, 0],
-      [3, 1],
-      [3, 2],
+      [0, 0],
+      [1, 0],
     ],
     id: "90a5a7da-62b3-4976-ad5f-dc930e9bbbbe",
     hits: 0,
