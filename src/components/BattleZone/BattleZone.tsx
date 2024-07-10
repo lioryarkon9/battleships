@@ -6,9 +6,9 @@ import { useBattleships } from "../../contexts/useBattleships";
 import { Cell } from "../Cell/Cell";
 import { GameOver } from "../GameOver/GameOver";
 
-import styles from "./FightingWater.module.css";
+import styles from "./BattleZone.module.css";
 
-export function FightingWater(): React.JSX.Element {
+export function BattleZone(): React.JSX.Element {
   const { state } = useBattleships();
   const { battleZone, shipsLayout, damagedCoordinates } = state;
 
@@ -21,7 +21,7 @@ export function FightingWater(): React.JSX.Element {
   return (
     <div className={styles.gridContainer}>
       {battleZone.map((column, columnIndex) => (
-        <div key={`row_${columnIndex}`} className={styles.gridColumn}>
+        <div key={`column_${columnIndex}`} className={styles.gridColumn}>
           {column.map((cell, cellIndex) => (
             <Cell
               key={JSON.stringify([columnIndex, cellIndex])}

@@ -1,5 +1,5 @@
 import { BattleshipsProvider } from "../contexts/useBattleships";
-import { FightingWater } from "./FightingWater/FightingWater";
+import { BattleZone } from "./BattleZone/BattleZone";
 
 import { Actions } from "./Actions/Actions";
 
@@ -14,7 +14,7 @@ function App() {
         </div>
         <div className={styles.alignCenter}>
           <div className={styles.fightingWaterContainer}>
-            <FightingWater />
+            <BattleZone />
           </div>
         </div>
       </div>
