@@ -50,6 +50,7 @@ export function Cell({ battleshipId, coordinates }: TProps): React.JSX.Element {
       <div className={styles.section}>
         {shipStatus ? (
           <img
+            alt="ship_icon"
             className={styles.shipIcon}
             src={ICON_BY_SHIP_TYPE[shipStatus.type].standard}
           />
@@ -59,6 +60,7 @@ export function Cell({ battleshipId, coordinates }: TProps): React.JSX.Element {
       <div className={styles.section}>
         {isCellStatusIcon && (
           <img
+            alt="status_icon"
             className={styles.statusIcon}
             src={isDamaged ? hitSmallIcon : missSmallIcon}
           />
