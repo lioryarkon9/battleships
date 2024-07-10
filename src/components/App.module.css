@@ -1,0 +1,27 @@
+.appContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
+
+.fightingWaterContainer {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .alignCenter {
+    width: 100%;
+  }
+}

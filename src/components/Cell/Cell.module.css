@@ -1,0 +1,53 @@
+.gridCell {
+  flex-grow: 1;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  height: 20px;
+}
+
+.firedUpon {
+  /* background-color: gray; */
+}
+
+.damaged,
+.destroyed {
+  color: #fff;
+  font-weight: bold;
+}
+
+.damaged {
+  /* background-color: green; */
+}
+
+.destroyed {
+  background-color: #c33e3e69;
+}
+
+.shipIcon {
+  width: 60px;
+}
+
+.statusIcon {
+  width: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .shipIcon {
+    width: 30px;
+  }
+  .statusIcon {
+    width: 12px;
+  }
+  .gridCell {
+    flex-grow: 0;
+    width: calc(100vw / 10);
+    height: 100%;
+  }
+}
