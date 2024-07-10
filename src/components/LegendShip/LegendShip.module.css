@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #126ecf;
+  color: #fff;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.hit {
+  text-align: center;
+  background-color: #c1c126;
+  color: black;
+  font-weight: bold;
+}
+
+.sunk {
+  text-align: center;
+  background-color: #c73535;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 1px;
+    margin: 0 1px;
+  }
+  .positions {
+    display: none;
+  }
+}

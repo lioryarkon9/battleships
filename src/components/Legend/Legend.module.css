@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}

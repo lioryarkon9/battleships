@@ -6,24 +6,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .section {
   height: 20px;
 }
 
-.firedUpon {
-  /* background-color: gray; */
-}
-
 .damaged,
 .destroyed {
   color: #fff;
   font-weight: bold;
-}
-
-.damaged {
-  /* background-color: green; */
 }
 
 .destroyed {
